@@ -91,7 +91,8 @@ public class GooinLauncherFragment extends Fragment {
         public void onClick(View view) {
             ActivityInfo activityInfo = mResolveInfo.activityInfo;
             Intent i = new Intent(Intent.ACTION_MAIN)
-                    .setClassName(activityInfo.applicationInfo.packageName, activityInfo.name);
+                    .setClassName(activityInfo.applicationInfo.packageName, activityInfo.name)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//启动新的任务
 
             startActivity(i);
 
